@@ -1,6 +1,6 @@
 services:          #default synxtax
   databasefirst:        #naming convention for container
-    build: /opt/dockercompose_st_emp/student/Mysql/  #location of the docker file
+    build: /opt/employees-student-compose/dockercompose_st_emp-main/dockercompose_st_emp-main/student/Mysql/  #location of the docker file
     ports:     #port mapping my container to host port 
       - '3306:3306'  
     container_name: Database  #providing name to container
@@ -8,7 +8,7 @@ services:          #default synxtax
         bridge
 
   backendsecond: 
-    build: /opt/dockercompose_st_emp/student/backend/    
+    build: /opt/employees-student-compose/dockercompose_st_emp-main/dockercompose_st_emp-main/student/backend/    
     ports:
       - '8080:8080'        
     container_name: Backend
@@ -16,7 +16,7 @@ services:          #default synxtax
         bridge
 
   frontendthrid:
-    build:  /opt/dockercompose_st_emp/student/frontend/
+    build:  /opt/employees-student-compose/dockercompose_st_emp-main/dockercompose_st_emp-main/student/frontend/
     ports:
       - '80:80'
     container_name: Frontend
@@ -24,7 +24,7 @@ services:          #default synxtax
         bridge
 
   employeedata:
-    build:  /opt/dockercompose_st_emp/Employee/psql-database/
+    build:  /opt/employees-student-compose/dockercompose_st_emp-main/dockercompose_st_emp-main/Employee/psql-database/
     ports:
       - '5432:5432'
     container_name: database
@@ -33,7 +33,7 @@ services:          #default synxtax
 
 
   employeeback:
-    build:  /opt/dockercompose_st_emp/Employee/backend/
+    build:  /opt/employees-student-compose/dockercompose_st_emp-main/dockercompose_st_emp-main/Employee/backend/
     ports:
       - '8081:8080'
     container_name: Back
@@ -41,7 +41,7 @@ services:          #default synxtax
         bridge
 
   employeepsqldatabase:
-    build:  /opt/dockercompose_st_emp/Employee/frontend/
+    build:  /opt/employees-student-compose/dockercompose_st_emp-main/dockercompose_st_emp-main/Employee/frontend/
     ports:
       - '3000:3000'
     container_name: frontend
