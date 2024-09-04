@@ -2,12 +2,12 @@
 FROM ubuntu:latest
 
 # Set environment variables for non-interactive apt installs
-ENV DB_HOST="3.110.51.254" 
+ENV DB_HOST="3.86.217.176" 
 ENV DB_USER="test" 
 ENV DB_PASSWORD="1234" 
 ENV DB_NAME="employees" 
 ENV DB_PORT="5432" 
-ENV ALLOWED_ORIGINS="http://3.110.51.254:3000"
+ENV ALLOWED_ORIGINS="http://3.86.217.176:3000"
 
 # Set Go environment variables
 ENV GOPATH=/go
