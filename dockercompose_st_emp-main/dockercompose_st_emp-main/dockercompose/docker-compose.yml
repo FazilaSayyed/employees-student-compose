@@ -1,0 +1,49 @@
+services:          #default synxtax
+  databasefirst:        #naming convention for container
+    build: /opt/dockercompose_st_emp/student/Mysql/  #location of the docker file
+    ports:     #port mapping my container to host port 
+      - '3306:3306'  
+    container_name: Database  #providing name to container
+    network_mode:   #providing network mode
+        bridge
+
+  backendsecond: 
+    build: /opt/dockercompose_st_emp/student/backend/    
+    ports:
+      - '8080:8080'        
+    container_name: Backend
+    network_mode:
+        bridge
+
+  frontendthrid:
+    build:  /opt/dockercompose_st_emp/student/frontend/
+    ports:
+      - '80:80'
+    container_name: Frontend
+    network_mode:
+        bridge
+
+  employeedata:
+    build:  /opt/dockercompose_st_emp/Employee/psql-database/
+    ports:
+      - '5432:5432'
+    container_name: database
+    network_mode:
+        bridge
+
+
+  employeeback:
+    build:  /opt/dockercompose_st_emp/Employee/backend/
+    ports:
+      - '8081:8080'
+    container_name: Back
+    network_mode:
+        bridge
+
+  employeepsqldatabase:
+    build:  /opt/dockercompose_st_emp/Employee/frontend/
+    ports:
+      - '3000:3000'
+    container_name: frontend
+    network_mode:
+        bridge
